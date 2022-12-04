@@ -1,0 +1,35 @@
+
+<% include ../partials/header %>
+<div>
+    <a href="/quanly">Quay lại</a>
+</div>
+<main role="main">
+
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <h3 class="diary-title">Chỉnh sửa</h3>
+      <form method="POST">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Hình ảnh</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="hinhanh" value="<%- data.hinhanh %>">
+          </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Tiêu đề</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="<%- data.title %>">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Nội dung</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%- data.description %></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Gía</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="price" value="<%- data.price %>">
+      </div>
+      <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
+      <hr>
+    </form>
+    </div> <!-- /container -->
+
+  </main>

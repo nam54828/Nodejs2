@@ -1,0 +1,80 @@
+<style>
+h5{
+    margin-left: 20px;
+}
+details{
+    margin-left: 20px;
+}
+h4{
+    margin-left: 20px;
+}
+a{
+    float:left; 
+    margin-left: 20px;
+    text-decoration: none;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10%;
+}
+a :hover{
+    background-color: red;
+    color: white;
+}
+.card{
+    width: 300px; 
+    height: 420px; 
+    border: 1px solid gray; 
+    float: left; 
+    margin: 40px 40px;
+    border-radius: 10px;
+}
+.card-img-top{
+    width: 300px; 
+    height: 200px; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+</style>
+
+<div class="container" >
+    <div>
+        <a href="/">Trang chủ</a>
+    </div>
+    <div>
+        <a href="/todolist/add">Thêm</a>
+    </div>
+    <div class="row" style="width: 1800px; margin-left: 180px;">
+        
+        <% if (datapost) { %>
+            <% datapost.forEach(function(item){ %>
+                <div class="card">
+                    <img src="<%= item.hinhanh %> " class="card-img-top"/>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= item.title %>
+                        </h5>
+                        <p class="card-text">
+                        <details style="text-align:justify ;">
+                            <summary>Chi tiết</summary>
+                            <%= item.description %>
+                        </details>
+                        </p>
+                        <h4 class="price text-danger">Giá:
+                            <%= item.price %> VNĐ
+                        </h4>
+                        <br />
+                        <a href="todolist/detail/<%= item.id %>" class="btn btn-secondary"
+                            >Xem
+                        </a>
+                        <a href="todolist/edit/<%= item.id %>" class="btn btn-secondary"
+                            >Sửa
+                        </a>
+                        <a href="todolist/delete/<%= item.id %>" class="btn btn-secondary"
+                            >Xóa
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+</div>
